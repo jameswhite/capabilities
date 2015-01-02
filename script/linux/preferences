@@ -1,6 +1,6 @@
 # shell fragment included by bootstrap
 
-install_package{}{
+install_package(){
     echo "There is no default package installer for $*"
 }
 
