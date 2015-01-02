@@ -1,6 +1,6 @@
 # shell fragment included by bootstrap
 
-export GPG='gnupg'
+export PGP='gnupg'
 export PKGMANAGER='apt-utils'
 export VERSIONCONTROL='git'
 export WEBSERVER='apache2'

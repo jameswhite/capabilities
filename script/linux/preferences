@@ -4,7 +4,7 @@ install_package(){
     echo "There is no default package installer for $*"
 }
 
-export PGP='gpg'
+export PGP=''
 export PKGMANAGER=''
 export VERSIONCONTROL=''
 export WEBSERVER=''

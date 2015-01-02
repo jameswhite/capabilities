@@ -36,7 +36,6 @@ fi
 install_package $WEBSERVER $PKGMANAGER $VERSIONCONTROL $PGP $RNG
 
 
-
 ################################################################################
 # Optional Software Administrator (some non-root account to do things as)
 export OPT_ADMIN='opt'
