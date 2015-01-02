@@ -9,17 +9,22 @@ install_package(){
 }
 
 setup_random_number_generator(){
+    echo -n
 }
 
 setup_packaging_utility(){
+    echo -n
 }
 
 setup_package_repository(){
+    echo -n
 }
 
 setup_version_control_system(){
+    echo -n
 }
 
 setup_configuration_management_system(){
+    echo -n
 }
 
