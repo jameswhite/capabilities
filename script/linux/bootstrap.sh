@@ -30,9 +30,9 @@ if [ ! -z "${DOMAINNAME}" ]; then
 fi
 
 
-
 ################################################################################
 # these are defined in the preferences
+echo "install_package $WEBSERVER $PKGMANAGER $VERSIONCONTROL $PGP $RNG"
 install_package $WEBSERVER $PKGMANAGER $VERSIONCONTROL $PGP $RNG
 
 
@@ -53,4 +53,9 @@ chmod 400 /home/${OPT_ADMIN}/.password
 
 ################################################################################
 #
+setup_random_number_generator
+setup_packaging_utility
+setup_package_repository
+setup_version_control_system
+setup_configuration_management_system
 
