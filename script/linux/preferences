@@ -1,0 +1,10 @@
+# shell fragment included by bootstrap
+
+install_package{}{
+    echo "There is no default package installer for $*"
+}
+
+export PGP='gpg'
+export PKGMANAGER=''
+export VERSIONCONTROL=''
+export WEBSERVER=''
