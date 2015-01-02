@@ -1,4 +1,5 @@
 ### Just a repo for organizing my thoughts on this topic.
+Aquire a domain (example.org, this will come with a DNS provider)
 
 Choose your "race" (Warcraft/Starcraft terminology)
   - Cloud
@@ -22,9 +23,9 @@ Choose your "race" (Warcraft/Starcraft terminology)
   - Windows
       - pkgrepo: IIS, Nuget
 
-
-Deploy your "Command Center/Hive/Gateway"
+### Deploy your "Command Center/Hive/Gateway"
   - A single server with your base OS'es "race" with:
+    - dnsentry : a DNS entry (A record) with your DNS provider
     - pkgrepo  : a place to store and deploy packages (e.g. apache2, apt-ftparchive)
     - pkgbuild : a system for building packages
     - vcs      : a version control system (e.g. git)

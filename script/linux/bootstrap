@@ -1,0 +1,11 @@
+env DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes -oDpkg::Options::="--force-confdef" -oDpkg::Options::="--force-confold" install apache2 gnupg apt-utils rng-tools git
+groupadd -g 400 opt
+useradd  -g 400 -u 400 -m -d /home/opt -k /etc/skel -s /bin/bash opt
+
+# randomize the root password
+passwd=$(dd if=/dev/urandom bs=12 count=1|base64)
+echo "opt:${passwd}"|chpasswd
+echo "The password is [ ${passwd} ]" | tee /home/opt/.password
+chmod 400 /home/opt/.password
+
+# set up gpg for the opt user
