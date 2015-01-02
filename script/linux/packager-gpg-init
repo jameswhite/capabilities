@@ -1,5 +1,14 @@
 #!/bin/bash
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+DNSDOMAINNAME=$(dnsdomainname)
+if [ -z "${DNSDOMAINNAME}" ]; then
+  echo "dnsdomainname returns an empty domain"
+  exit 1;
+fi
+
+PACKAGE_HOST="packages.${DNSDOMAINNAME}"
+PACKAGE_VIRTUSER='packager'
+PACKAGE_HOST_USER='opt'
 
 # prerequisites:
 for pkg in gpg rng-tools sudo; do
@@ -9,24 +18,15 @@ for pkg in gpg rng-tools sudo; do
   fi
 done
 
-DNSDOMAINNAME=$(dnsdomainname)
-if [ -z "${DNSDOMAINNAME}" ]; then
-  echo "dnsdomainname returns an empty domain"
-  exit 1;
-fi
-
 SECRET=$(cat ~/.secret)
 if [ -z "${SECRET}" ]; then
   echo "secret is empty"
   exit 1;
 fi
 
-PACKAGE_USER='packagemaster'
-PACKAGE_HOST="apt.${DNSDOMAINNAME}"
-
-gpg --list-keys|grep -q "^uid *${PACKAGE_USER}@${PACKAGE_HOST}"
+gpg --list-keys|grep -q "^uid *${PACKAGE_VIRTUSER}@${PACKAGE_HOST}"
 if [ $? -eq 0 ];then
-    logger -p local5.error -- "$0[$$] apt keys already exists. Aborting..."
+    logger -p local5.error -- "$0[$$] package keys already exists. Aborting..."
     exit 0
 fi
 if [ -z ${SECRET} ];then
@@ -44,7 +44,7 @@ Key-Length: 1024
 Subkey-Type: ELG-E
 Subkey-Length: 2048
 Name-Real:  ${PACKAGE_HOST}
-Name-Email: ${PACKAGE_USER}@${PACKAGE_HOST}
+Name-Email: ${PACKAGE_VIRTUSER}@${PACKAGE_HOST}
 Expire-Date: 0
 Passphrase: ${SECRET}
 %commit
