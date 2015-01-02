@@ -14,3 +14,4 @@ install_package(){
     done
     [ ! -z "${INSTALL}" ] && env DEBIAN_FRONTEND=noninteractive apt-get -y --force-yes -oDpkg::Options::="--force-confdef" -oDpkg::Options::="--force-confold" install "${INSTALL}"
 }
+
