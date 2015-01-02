@@ -1,6 +1,4 @@
 # shell fragment included by bootstrap
-
-
 export PGP=''
 export PKGMANAGER=''
 export VERSIONCONTROL=''
@@ -10,8 +8,18 @@ install_package(){
     echo "There is no default package installer for $*"
 }
 
-setup_random_number_generator(){ echo -n }
-setup_packaging_utility(){ echo -n }
-setup_package_repository(){ echo -n }
-setup_version_control_system(){ echo -n }
-setup_configuration_management_system(){ echo -n }
+setup_random_number_generator(){
+}
+
+setup_packaging_utility(){
+}
+
+setup_package_repository(){
+}
+
+setup_version_control_system(){
+}
+
+setup_configuration_management_system(){
+}
+
