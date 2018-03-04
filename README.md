@@ -50,8 +50,12 @@
   - An automation is just a capability (a sub-resource)  that must be maintained by another resource, usually requiring fewer resources.
 
 ### Humans
-  - Humans have capability complexity scores. Not having a high enough score means it'll take longer to instanciate a capability.
+  - Humans have capability complexity scores. Not having a high enough score means it'll take longer to instanciate a capability, as Research will need to be done.
   - Humans come with an inital cost and an upkeep, automations are maintained like any other capability.
+
+### Research
+  - If no resource has a capability at the level required to instantiate something, they can either spend time (with the associated upkeep spend) to research it or you can acquire another Resource with that capability.
+  - Research will increase the capability score of that Human permanently. Humans with higher capabilities have higher upkeep requirements, and may leave you for greener pastures.
 
 ### Culture
   - Culture will affect how your capabilities are instantiated
@@ -59,3 +63,6 @@
   - Some cultures are mutually exclusive with others.
   - Cultures will decide which Humans and Automations you need to build an maintain Capabilities
   - Examples include (arch/vendor/os/host : monoculture/polyculture, package culture, hero culture, crunch time, agile, waterfall, flat hiearchy, silos, cult/"family", open vs. closed florr plan, 9-5, rowe, remote or local, contractor culture, independent vs vc backed, hipster vs. new hotness, science lab, optimize-for-happiness, retalitory culture, outsource culture, etc)
+
+### Initial Conditions
+  - The game starts with one resource (you) with a random, but humble, set of capabilities. You must spend time Researching the capabilities you'd like to instantiate.
