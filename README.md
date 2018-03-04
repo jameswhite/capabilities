@@ -36,6 +36,7 @@
   - Found under `./archs/<arch>/hosts/<host>/oses/<os>/plats/<plat>/langs/<lang>/caps/<cap>`
   - Capabilites can be made up of bundled packages or not.
   - 'black box' is a special type of capability that comes from a vendor, usually with an implied platform requirement.
+  - Some capabilities genereate paper, others just enable other capabilities.
 
 ### Implementations
   - Implementations (imps) are a language-specific, instance of a capablity.
@@ -52,6 +53,8 @@
 ### Humans
   - Humans have capability complexity scores. Not having a high enough score means it'll take longer to instanciate a capability, as Research will need to be done.
   - Humans come with an inital cost and an upkeep, automations are maintained like any other capability.
+  - Upkeep comes in the form of paper.
+  - Sales and Marketing Humans are a special kind of Human that will increase Users per Capability.
 
 ### Research
   - If no resource has a capability at the level required to instantiate something, they can either spend time (with the associated upkeep spend) to research it or you can acquire another Resource with that capability.
@@ -66,3 +69,23 @@
 
 ### Initial Conditions
   - The game starts with one resource (you) with a random, but humble, set of capabilities. You must spend time Researching the capabilities you'd like to instantiate.
+  - You'll have 250,000 paper to buy instances and acquire Humans.
+
+### Turns
+  - Instantiations, Upkeep and Paper move around during Turns.
+  - If a capability gives you 10 paper/User you get that every turn for evey User.
+  - If a Human costs you 10,000 paper, that is deducted every turn
+  - If an Instance has an upkeep of 100, it is deducted every turn.
+  - If an Instance has an upkeep of 100, it is deducted every turn.
+  - 200 Turns can be considered roughly a year in game time.
+
+### Users
+  - These are the consumers that bring in Paper.
+  - There are several types of Users you can attract. Free, Paying, Enterprise, and Institutional.
+  - Each type brings in more Paper (e.g. Enterprise Users pay more than Paying Users.)
+
+### Endgame
+  - Use Paper to enlist Humans to instantiate capabilities for which the Users will give you Paper. Sounds pretty simple, right?
+  - Which Humans you can enlist will depend on your Culture, Capabilites, and how much Paper you offer them.
+  - Which Users give you paper will depend on which Capabilities you offer.
+
