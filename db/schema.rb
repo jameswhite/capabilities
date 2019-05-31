@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_020134) do
+ActiveRecord::Schema.define(version: 2019_05_31_020339) do
 
   create_table "applications", force: :cascade do |t|
     t.string "name"
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 2019_05_31_020134) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "platforms", force: :cascade do |t|
+    t.string "name"
+    t.integer "host_system_id"
+    t.integer "operating_system_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["host_system_id"], name: "index_platforms_on_host_system_id"
+    t.index ["operating_system_id"], name: "index_platforms_on_operating_system_id"
   end
 
 end
