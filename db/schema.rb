@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_31_014002) do
+ActiveRecord::Schema.define(version: 2019_05_31_015319) do
+
+  create_table "architectures", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "capabilities", force: :cascade do |t|
     t.string "name"
