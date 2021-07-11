@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+# dotfile -T png -o graph.png; open graph.png
+require 'json'
+c = Hash.new();
+puts "digraph D {"
+File.open("capabilities.tbl").each { |line| c[line.chomp.gsub(/ .*/,"")] = "#{line.chomp}".gsub(/^[0-9]* */,"") };
+File.open("dependencies.tbl").each { |dep| (a,b) = dep.chomp.split(" -> "); puts "\"#{c[a]}\" -> \"#{c[b]}\"" }
+puts "}"
